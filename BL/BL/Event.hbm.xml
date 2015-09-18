@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ScudExporter.BL.Event,ScudExporter" table="pLogData">
+    <id name="Id" column="GUID">
+      <generator class="guid"/>
+    </id>
+    <many-to-one name="Emp" column="HozOrgan" class="ScudExporter.BL.Emp,ScudExporter" not-found="ignore"/>
+    <property name="Date_event" column="TimeVal" type="DateTime"/>
+    <property column="Mode" type="Int32" name="Event_code" />
+    <property column="DoorIndex" type="Int32" name="Zone_code" />
+    <property column="Event" type="Int32" name="Event32" />
+  </class>
+</hibernate-mapping>

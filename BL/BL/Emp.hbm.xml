@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ScudExporter.BL.Emp,ScudExporter" table="pList">
+    <id name="Id" column="id" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+    <property column="TabNumber" type="String" name="TabNumber" length="24" />
+    <property column="Name" type="String" name="Name" length="25" />
+    <property column="FirstName" type="String" name="FirstName" length="25" />
+    <property column="MidName" type="String" name="MidName" length="25" />
+    <many-to-one name="Division" column="Section" class="ScudExporter.BL.Division,ScudExporter" lazy="false"  not-found="ignore" cascade="none"/>
+  </class>
+</hibernate-mapping>
